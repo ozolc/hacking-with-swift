@@ -27,6 +27,7 @@ class ViewController: UITableViewController {
                 pictures.append(item)
             }
         }
+        pictures.sort()
         print(pictures)
     }
 
@@ -44,7 +45,9 @@ class ViewController: UITableViewController {
         // 1: try loading the "Detail" view controller and typecasting it to be DetailViewController
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             // 2: success! Set its selectedImage property
-            vc.selectedImage = pictures[indexPath.row]
+            vc.allPictures = pictures.count
+            vc.selectedIndexOfPictures = indexPath.row
+//            vc.selectedImage = pictures[indexPath.row]
             
             // 3: now push it onto the navigation controller
             navigationController?.pushViewController(vc, animated: true)
