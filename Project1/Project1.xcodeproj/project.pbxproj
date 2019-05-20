@@ -77,13 +77,13 @@
 			isa = PBXGroup;
 			children = (
 				B0BC35F822913D66006D7709 /* AppDelegate.swift */,
+				B0BC363322914E5E006D7709 /* DetailViewController.swift */,
 				B0BC35FA22913D66006D7709 /* ViewController.swift */,
 				B0BC35FC22913D66006D7709 /* Main.storyboard */,
 				B0BC35FF22913D67006D7709 /* Assets.xcassets */,
 				B0BC360122913D67006D7709 /* LaunchScreen.storyboard */,
 				B0BC360422913D67006D7709 /* Info.plist */,
 				B0BC361E22913F6E006D7709 /* Content */,
-				B0BC363322914E5E006D7709 /* DetailViewController.swift */,
 			);
 			path = Project1;
 			sourceTree = "<group>";
