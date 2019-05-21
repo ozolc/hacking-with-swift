@@ -43,7 +43,15 @@ class ViewController: UIViewController {
         button2.layer.borderColor = UIColor.lightGray.cgColor
         button3.layer.borderColor = UIColor.lightGray.cgColor
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score", style: .done, target: self, action: #selector(showScore))
+        
         askQuestion()
+    }
+    
+    @objc func showScore() {
+        let ac = UIAlertController(title: "Result", message: "Your score is \(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(ac, animated: true)
     }
 
     func askQuestion(action: UIAlertAction! = nil) {
@@ -74,7 +82,7 @@ class ViewController: UIViewController {
         totalQuestions += 1
         
         if totalQuestions == 3 {
-            let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+            let ac = UIAlertController(title: "You have passed 3 questions", message: "Your score is \(score)", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
             present(ac, animated: true)
             totalQuestions = 0

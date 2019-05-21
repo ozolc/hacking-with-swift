@@ -29,6 +29,8 @@ class ViewController: UITableViewController {
         }
         pictures.sort()
         print(pictures)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Recommend", style: .plain, target: self, action: nil)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
