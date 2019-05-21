@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Project1
+//  Project3
 //
 //  Created by Maksim Nosov on 19/05/2019.
 //  Copyright © 2019 Maksim Nosov. All rights reserved.
