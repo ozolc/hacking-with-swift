@@ -19,7 +19,11 @@ class ViewController: UIViewController {
     var activatedButtons = [UIButton]()
     var solutions = [String]()
     
-    var score = 0
+    var score = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
     var level = 1
     
     override func loadView() {
@@ -99,6 +103,10 @@ class ViewController: UIViewController {
                 ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelup))
                 present(ac, animated: true)
             }
+        } else {
+            let ac = UIAlertController(title: "Error", message: "Incorrect guess", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
         }
     }
     
@@ -214,6 +222,9 @@ class ViewController: UIViewController {
                 let letterButton = UIButton(type: .system)
                 letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 36)
                 letterButton.addTarget(self, action: #selector(letterTapped(_:)), for: .touchUpInside)
+                letterButton.layer.borderWidth = 1
+                letterButton.layer.cornerRadius = 15
+                letterButton.clipsToBounds = true
                 
                 // give the button some temporary text so we can see it on-screen
                 letterButton.setTitle("WWW", for: .normal)
