@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B076131B2296970C0047FEDD /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = B07613192296970C0047FEDD /* level2.txt */; };
+		B076131C2296970C0047FEDD /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = B076131A2296970C0047FEDD /* level1.txt */; };
 		B0F9F85522967CFC00EFB51E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9F85422967CFC00EFB51E /* AppDelegate.swift */; };
 		B0F9F85722967CFC00EFB51E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9F85622967CFC00EFB51E /* ViewController.swift */; };
 		B0F9F85A22967CFC00EFB51E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F9F85822967CFC00EFB51E /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B07613192296970C0047FEDD /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
+		B076131A2296970C0047FEDD /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
 		B0F9F85122967CFC00EFB51E /* Project8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F9F85422967CFC00EFB51E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0F9F85622967CFC00EFB51E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,12 +58,14 @@
 		B0F9F85322967CFC00EFB51E /* Project8 */ = {
 			isa = PBXGroup;
 			children = (
+				B0F9F86022967CFD00EFB51E /* Info.plist */,
 				B0F9F85422967CFC00EFB51E /* AppDelegate.swift */,
 				B0F9F85622967CFC00EFB51E /* ViewController.swift */,
-				B0F9F85822967CFC00EFB51E /* Main.storyboard */,
+				B076131A2296970C0047FEDD /* level1.txt */,
+				B07613192296970C0047FEDD /* level2.txt */,
 				B0F9F85B22967CFD00EFB51E /* Assets.xcassets */,
 				B0F9F85D22967CFD00EFB51E /* LaunchScreen.storyboard */,
-				B0F9F86022967CFD00EFB51E /* Info.plist */,
+				B0F9F85822967CFC00EFB51E /* Main.storyboard */,
 			);
 			path = Project8;
 			sourceTree = "<group>";
@@ -122,8 +128,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B076131C2296970C0047FEDD /* level1.txt in Resources */,
 				B0F9F85F22967CFD00EFB51E /* LaunchScreen.storyboard in Resources */,
 				B0F9F85C22967CFD00EFB51E /* Assets.xcassets in Resources */,
+				B076131B2296970C0047FEDD /* level2.txt in Resources */,
 				B0F9F85A22967CFC00EFB51E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
