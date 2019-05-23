@@ -23,7 +23,7 @@ class ViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Filter", style: .done, target: self, action: #selector(filterJSON))
         
-        loadData()
+        performSelector(inBackground: #selector(loadData), with: nil)
     }
         
     
@@ -39,12 +39,11 @@ class ViewController: UITableViewController {
         if let url = URL(string: urlString) {
             if let data  = try? Data(contentsOf: url) {
                 parse(json: data)
-                
                 return
             }
         }
         
-        showError()
+        performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
     }
     
     func parse(json: Data) {
@@ -53,11 +52,11 @@ class ViewController: UITableViewController {
         if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
             petitions = jsonPetitions.results
             filteredPetitions = petitions
-            tableView.reloadData()
+            tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
         }
     }
     
-    func showError() {
+    @objc func showError() {
         let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
@@ -70,7 +69,11 @@ class ViewController: UITableViewController {
         let submitAction = UIAlertAction(title: "Filter", style: .default) { [weak self, weak ac] _ in
             guard let filterText = ac?.textFields?[0].text else { return }
             self?.submit(filterText)
-            self?.tableView.reloadData()
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+            
         }
         
         ac.addAction(submitAction)
@@ -79,12 +82,16 @@ class ViewController: UITableViewController {
     
     func submit(_ text: String) {
         filteredPetitions.removeAll()
-        for petition in petitions {
-            if petition.title.lowercased().contains(text.lowercased()) {
-                filteredPetitions.append(petition)
+
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let self = self else { return }
+            for petition in self.petitions {
+                if petition.title.lowercased().contains(text.lowercased()) {
+                    self.filteredPetitions.append(petition)
+                }
             }
         }
-//        tableView.reloadData()
+        
     }
     
     
