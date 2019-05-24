@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UITableViewController {
     var pictures = [String]()
+    let defaults = UserDefaults.standard
+//    var showCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,12 @@ class ViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Recommend", style: .plain, target: self, action: nil)
     }
-
+    
+    override func viewWillAppear(_ animated:Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pictures.count
     }
@@ -46,6 +53,10 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
         cell.textLabel?.text = pictures[indexPath.row]
+
+        let cellCount = defaults.integer(forKey: "\(pictures[indexPath.row])")
+        cell.detailTextLabel?.text = String(cellCount)
+
         return cell
     }
     
@@ -56,6 +67,9 @@ class ViewController: UITableViewController {
             vc.allPictures = pictures.count
             vc.selectedIndexOfPictures = indexPath.row
             vc.selectedImage = pictures[indexPath.row]
+            
+            let cellCount = defaults.integer(forKey: "\(pictures[indexPath.row])")
+            defaults.set(cellCount + 1, forKey: "\(pictures[indexPath.row])")
             
             // 3: now push it onto the navigation controller
             navigationController?.pushViewController(vc, animated: true)

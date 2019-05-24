@@ -12,6 +12,9 @@ class ViewController: UITableViewController {
     
     var allWords = [String]()
     var usedWords = [String]()
+    var isRestored = false
+    
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +32,48 @@ class ViewController: UITableViewController {
             allWords = ["silkworm"]
         }
         
-        startGame()
+        isRestored = defaults.bool(forKey: "isRestored")
+        if isRestored {
+            loadState()
+        } else {
+            startGame()
+        }
     }
 
     @objc func startGame() {
         title = allWords.randomElement()
+        isRestored = false
         usedWords.removeAll(keepingCapacity: true)
+        saveState()
         tableView.reloadData()
+    }
+    
+    func saveState() {
+        let jsonEncoder = JSONEncoder()
+        if let savedWords = try? jsonEncoder.encode(usedWords) {
+            defaults.set(savedWords, forKey: "usedWords")
+            defaults.set(isRestored, forKey: "isRestored")
+            defaults.set(title, forKey: "title")
+            
+            if !usedWords.isEmpty {
+                defaults.set(true, forKey: "isRestored")
+            }
+        } else {
+            print("Failed to save state.")
+        }
+    }
+    
+    func loadState() {
+        if let savedWords = defaults.object(forKey: "usedWords") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                usedWords = try jsonDecoder.decode([String].self, from: savedWords)
+                title = defaults.string(forKey: "title")
+            } catch {
+                print("Failed to load state.")
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -98,6 +136,8 @@ class ViewController: UITableViewController {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
                     usedWords.insert(answer, at: 0)
+                    
+                    saveState()
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)

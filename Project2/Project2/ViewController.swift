@@ -17,6 +17,12 @@ class ViewController: UIViewController {
     var countries = [String]()
     var correctAnswer = 0
     var score = 0
+    var bestScore = 0
+    var isBest = false
+    
+    let defaults = UserDefaults.standard
+    let bestScoreString = "bestScore"
+    
     var totalQuestions = 0
     
     override func viewDidLoad() {
@@ -45,7 +51,18 @@ class ViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score", style: .done, target: self, action: #selector(showScore))
         
+        bestScore = loadScore()
+        
         askQuestion()
+        
+    }
+    
+    func loadScore() -> Int {
+        return defaults.integer(forKey: bestScoreString)
+    }
+    
+    func saveScore(value: Int) {
+        defaults.set(value, forKey: bestScoreString)
     }
     
     @objc func showScore() {
@@ -71,24 +88,39 @@ class ViewController: UIViewController {
         if sender.tag == correctAnswer {
             title = "Correct"
             score += 1
+            if (score > bestScore) && !isBest {
+                isBest = true
+                showBestScore()
+            }
+            saveScore(value: score)
         } else {
             title = "Wrong"
             let ac = UIAlertController(title: title, message: "That's the flag of \(countries[sender.tag].uppercased())", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
             present(ac, animated: true)
             score -= 1
+            if (score < bestScore) && isBest {
+//                saveScore(value: score)
+                isBest = false
+            }
         }
         
         totalQuestions += 1
         
-        if totalQuestions == 3 {
-            let ac = UIAlertController(title: "You have passed 3 questions", message: "Your score is \(score)", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
-            present(ac, animated: true)
-            totalQuestions = 0
-        } else {
+//        if totalQuestions == 3 {
+//            let ac = UIAlertController(title: "You have passed 3 questions", message: "Your score is \(score)", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+//            present(ac, animated: true)
+//            totalQuestions = 0
+//        } else {
             askQuestion()
-        }
+//        }
+    }
+    
+    func showBestScore() {
+        let ac = UIAlertController(title: "Congratulations", message: "It's your best score: \(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: askQuestion))
+        present(ac, animated: true)
     }
     
 }
