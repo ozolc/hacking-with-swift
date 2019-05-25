@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var intensity: UISlider!
+    @IBOutlet weak var changeFilterButton: UIButton!
     
     var currentImage: UIImage!
     
@@ -24,6 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         title = "Instafilter"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(importPicture))
+        changeFilterButton.sizeToFit()
         
         context = CIContext()
         currentFilter = CIFilter(name: "CISepiaTone")
@@ -59,6 +61,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         ac.addAction(UIAlertAction(title: "CIUnsharpMask", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "CIVignette", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+
         present(ac, animated: true)
     }
     
@@ -69,6 +72,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // safely read the alert action's title
         guard let actionTitle = action.title else { return }
         
+        // set title on button by chosen filter
+        changeFilterButton.setTitle(actionTitle, for: .normal)
+        
         currentFilter = CIFilter(name: actionTitle)
         
         let beginImage = CIImage(image: currentImage)
@@ -78,7 +84,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func save(_ sender: UIButton) {
-        guard let image = imageView.image else { return }
+        
+        guard let image = imageView.image else {
+            let ac = UIAlertController(title: "Error", message: "There is no image in ImageView", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+            return
+        }
         
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
