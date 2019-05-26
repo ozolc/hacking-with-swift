@@ -27,6 +27,24 @@ class ViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotation(paris)
         mapView.addAnnotation(rome)
         mapView.addAnnotation(washington)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Map's view", style: .done, target: self, action: #selector(setMapView))
+    }
+    
+    @objc func setMapView() {
+        let ac = UIAlertController(title: "Map View", message: "Please select Map View", preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Satellite", style: .default, handler: { [weak self] _ in
+            self?.mapView.mapType = .satellite
+        }))
+        ac.addAction(UIAlertAction(title: "Hybrid", style: .default, handler: { [weak self] _ in
+            self?.mapView.mapType = .hybrid
+        }))
+        ac.addAction(UIAlertAction(title: "Standard", style: .default, handler: { [weak self] _ in
+            self?.mapView.mapType = .standard
+        }))
+        ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        
+        self.present(ac, animated: true)
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -34,7 +52,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         let identifier = "Capital"
         
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
         
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
@@ -42,6 +60,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             
             let btn = UIButton(type: .detailDisclosure)
             annotationView?.rightCalloutAccessoryView = btn
+            annotationView?.pinTintColor = UIColor(red: 43/255, green: 33/255, blue: 68/255, alpha: 1)
         } else {
             annotationView?.annotation = annotation
         }
