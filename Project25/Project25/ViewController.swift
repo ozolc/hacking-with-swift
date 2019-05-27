@@ -22,25 +22,10 @@ class ViewController: UICollectionViewController, UINavigationControllerDelegate
         
         title = "Selfie Share"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(importPicture))
-        
-        let addImage = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showConnectionPrompt))
-        let showConectedPeers = UIBarButtonItem(title: "Peers", style: .done, target: self, action: #selector(showPeers))
-        navigationItem.leftBarButtonItems = [addImage, showConectedPeers]
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showConnectionPrompt))
         
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
         mcSession?.delegate = self
-    }
-    
-    @objc func showPeers() {
-        guard let peers = mcSession?.connectedPeers else { return }
-        var peerName = ""
-        for peer in peers {
-            peerName += "\(peer.displayName) "
-        }
-        
-        let ac = UIAlertController(title: "Connected peers:", message: peerName, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Close", style: .cancel))
-        present(ac, animated: true)
     }
     
     @objc func showConnectionPrompt() {
