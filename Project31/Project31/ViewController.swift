@@ -10,15 +10,19 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate {
-
+    
     @IBOutlet weak var addressBar: UITextField!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var emptyStackViewLabel: UILabel!
     
     weak var activeWebView: WKWebView?
-
+    var defaultURL = "https://www.hackingwithswift.com/"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emptyStackViewLabel.isHidden = true
+
         setDefaultTitle()
         
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addWebView))
@@ -26,18 +30,29 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
         navigationItem.rightBarButtonItems = [delete, add]
         
     }
-
+    
     func setDefaultTitle() {
         title = "Multibrowser"
+        emptyStackViewLabel.isHidden = false
+        emptyStackViewLabel.text = "Input address in bar or tap on PLUS icon."
+        addressBar.text = ""
     }
     
     @objc func addWebView() {
         let webView = WKWebView()
         webView.navigationDelegate = self
+        emptyStackViewLabel.isHidden = true
         
         stackView.addArrangedSubview(webView)
+        var urlString = defaultURL
         
-        let url = URL(string: "https://www.hackingwithswift.com")!
+        if let url = addressBar.text, !url.isEmpty {
+            urlString = addressBar.text!
+        }
+        
+        print(urlString)
+        
+        let url = URL(string: urlString)!
         webView.load(URLRequest(url: url))
         
         webView.layer.borderColor = UIColor.blue.cgColor
@@ -59,14 +74,34 @@ class ViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegat
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let webView = activeWebView, let address = addressBar.text {
-            if let url = URL(string: address) {
-                webView.load(URLRequest(url: url))
+        if stackView.arrangedSubviews.count == 0 {
+            if isAddressFieldValid(addressBar) {
+                addWebView()
             }
+        } else {
+            if isAddressFieldValid(addressBar) {
+                if let webView = activeWebView {
+                    if let url = URL(string: addressBar.text!) {
+                        webView.load(URLRequest(url: url))
+                    }
+                }
+            }
+            
         }
         
         textField.resignFirstResponder()
         return true
+    }
+    
+    func isAddressFieldValid(_ address: UITextField) -> Bool {
+        if let address = addressBar.text, ( address.hasPrefix("http://")) || (address.hasPrefix("https://") ) {
+            return true
+        } else {
+            let ac = UIAlertController(title: "Error", message: "URL must contains https:// or http:// in address.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+            return false
+        }
     }
     
     @objc func webViewTapped(_ recognizer: UITapGestureRecognizer) {
