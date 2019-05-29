@@ -14,6 +14,7 @@
 		B06AE293229E86AE003F9203 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06AE291229E86AE003F9203 /* LaunchScreen.storyboard */; };
 		B06AE29B229E8702003F9203 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE29A229E8702003F9203 /* SwiftyJSON.swift */; };
 		B06AE29D229E8810003F9203 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE29C229E8810003F9203 /* DetailViewController.swift */; };
+		B06AE2A0229E890C003F9203 /* Project38.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B06AE29E229E890C003F9203 /* Project38.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B06AE294229E86AE003F9203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06AE29A229E8702003F9203 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B06AE29C229E8810003F9203 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B06AE29F229E890C003F9203 /* Project38.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project38.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				B06AE294229E86AE003F9203 /* Info.plist */,
 				B06AE29A229E8702003F9203 /* SwiftyJSON.swift */,
 				B06AE29C229E8810003F9203 /* DetailViewController.swift */,
+				B06AE29E229E890C003F9203 /* Project38.xcdatamodeld */,
 			);
 			path = Project38;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B06AE29B229E8702003F9203 /* SwiftyJSON.swift in Sources */,
+				B06AE2A0229E890C003F9203 /* Project38.xcdatamodeld in Sources */,
 				B06AE28B229E86AE003F9203 /* ViewController.swift in Sources */,
 				B06AE289229E86AE003F9203 /* AppDelegate.swift in Sources */,
 				B06AE29D229E8810003F9203 /* DetailViewController.swift in Sources */,
@@ -346,6 +350,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B06AE29E229E890C003F9203 /* Project38.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B06AE29F229E890C003F9203 /* Project38.xcdatamodel */,
+			);
+			currentVersion = B06AE29F229E890C003F9203 /* Project38.xcdatamodel */;
+			path = Project38.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B06AE27D229E86AE003F9203 /* Project object */;
 }
