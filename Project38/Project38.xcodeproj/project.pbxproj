@@ -15,6 +15,8 @@
 		B06AE29B229E8702003F9203 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE29A229E8702003F9203 /* SwiftyJSON.swift */; };
 		B06AE29D229E8810003F9203 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE29C229E8810003F9203 /* DetailViewController.swift */; };
 		B06AE2A0229E890C003F9203 /* Project38.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B06AE29E229E890C003F9203 /* Project38.xcdatamodeld */; };
+		B06AE2A3229E8FE0003F9203 /* Commit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE2A1229E8FE0003F9203 /* Commit+CoreDataClass.swift */; };
+		B06AE2A4229E8FE0003F9203 /* Commit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE2A2229E8FE0003F9203 /* Commit+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		B06AE29A229E8702003F9203 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B06AE29C229E8810003F9203 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B06AE29F229E890C003F9203 /* Project38.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project38.xcdatamodel; sourceTree = "<group>"; };
+		B06AE2A1229E8FE0003F9203 /* Commit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B06AE2A2229E8FE0003F9203 /* Commit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 		B06AE287229E86AE003F9203 /* Project38 */ = {
 			isa = PBXGroup;
 			children = (
+				B06AE2A1229E8FE0003F9203 /* Commit+CoreDataClass.swift */,
+				B06AE2A2229E8FE0003F9203 /* Commit+CoreDataProperties.swift */,
 				B06AE288229E86AE003F9203 /* AppDelegate.swift */,
 				B06AE28A229E86AE003F9203 /* ViewController.swift */,
 				B06AE28C229E86AE003F9203 /* Main.storyboard */,
@@ -144,7 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B06AE2A3229E8FE0003F9203 /* Commit+CoreDataClass.swift in Sources */,
 				B06AE29B229E8702003F9203 /* SwiftyJSON.swift in Sources */,
+				B06AE2A4229E8FE0003F9203 /* Commit+CoreDataProperties.swift in Sources */,
 				B06AE2A0229E890C003F9203 /* Project38.xcdatamodeld in Sources */,
 				B06AE28B229E86AE003F9203 /* ViewController.swift in Sources */,
 				B06AE289229E86AE003F9203 /* AppDelegate.swift in Sources */,
