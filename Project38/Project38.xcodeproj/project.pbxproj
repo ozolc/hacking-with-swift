@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01FBBD4229EC45A0030766E /* Author+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FBBD0229EC45A0030766E /* Author+CoreDataClass.swift */; };
+		B01FBBD5229EC45A0030766E /* Author+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FBBD1229EC45A0030766E /* Author+CoreDataProperties.swift */; };
+		B01FBBD6229EC45A0030766E /* Commit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FBBD2229EC45A0030766E /* Commit+CoreDataClass.swift */; };
+		B01FBBD7229EC45A0030766E /* Commit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FBBD3229EC45A0030766E /* Commit+CoreDataProperties.swift */; };
 		B06AE289229E86AE003F9203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE288229E86AE003F9203 /* AppDelegate.swift */; };
 		B06AE28B229E86AE003F9203 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE28A229E86AE003F9203 /* ViewController.swift */; };
 		B06AE28E229E86AE003F9203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06AE28C229E86AE003F9203 /* Main.storyboard */; };
@@ -15,11 +19,13 @@
 		B06AE29B229E8702003F9203 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE29A229E8702003F9203 /* SwiftyJSON.swift */; };
 		B06AE29D229E8810003F9203 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE29C229E8810003F9203 /* DetailViewController.swift */; };
 		B06AE2A0229E890C003F9203 /* Project38.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B06AE29E229E890C003F9203 /* Project38.xcdatamodeld */; };
-		B06AE2A3229E8FE0003F9203 /* Commit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE2A1229E8FE0003F9203 /* Commit+CoreDataClass.swift */; };
-		B06AE2A4229E8FE0003F9203 /* Commit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06AE2A2229E8FE0003F9203 /* Commit+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B01FBBD0229EC45A0030766E /* Author+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B01FBBD1229EC45A0030766E /* Author+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B01FBBD2229EC45A0030766E /* Commit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B01FBBD3229EC45A0030766E /* Commit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B06AE285229E86AE003F9203 /* Project38.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project38.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06AE288229E86AE003F9203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06AE28A229E86AE003F9203 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,8 +36,6 @@
 		B06AE29A229E8702003F9203 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B06AE29C229E8810003F9203 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B06AE29F229E890C003F9203 /* Project38.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project38.xcdatamodel; sourceTree = "<group>"; };
-		B06AE2A1229E8FE0003F9203 /* Commit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B06AE2A2229E8FE0003F9203 /* Commit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +68,10 @@
 		B06AE287229E86AE003F9203 /* Project38 */ = {
 			isa = PBXGroup;
 			children = (
-				B06AE2A1229E8FE0003F9203 /* Commit+CoreDataClass.swift */,
-				B06AE2A2229E8FE0003F9203 /* Commit+CoreDataProperties.swift */,
+				B01FBBD0229EC45A0030766E /* Author+CoreDataClass.swift */,
+				B01FBBD1229EC45A0030766E /* Author+CoreDataProperties.swift */,
+				B01FBBD2229EC45A0030766E /* Commit+CoreDataClass.swift */,
+				B01FBBD3229EC45A0030766E /* Commit+CoreDataProperties.swift */,
 				B06AE288229E86AE003F9203 /* AppDelegate.swift */,
 				B06AE28A229E86AE003F9203 /* ViewController.swift */,
 				B06AE28C229E86AE003F9203 /* Main.storyboard */,
@@ -150,9 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B06AE2A3229E8FE0003F9203 /* Commit+CoreDataClass.swift in Sources */,
+				B01FBBD5229EC45A0030766E /* Author+CoreDataProperties.swift in Sources */,
+				B01FBBD7229EC45A0030766E /* Commit+CoreDataProperties.swift in Sources */,
+				B01FBBD4229EC45A0030766E /* Author+CoreDataClass.swift in Sources */,
+				B01FBBD6229EC45A0030766E /* Commit+CoreDataClass.swift in Sources */,
 				B06AE29B229E8702003F9203 /* SwiftyJSON.swift in Sources */,
-				B06AE2A4229E8FE0003F9203 /* Commit+CoreDataProperties.swift in Sources */,
 				B06AE2A0229E890C003F9203 /* Project38.xcdatamodeld in Sources */,
 				B06AE28B229E86AE003F9203 /* ViewController.swift in Sources */,
 				B06AE289229E86AE003F9203 /* AppDelegate.swift in Sources */,
@@ -302,8 +310,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RXJ69EWCMT;
 				INFOPLIST_FILE = Project38/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -321,8 +330,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RXJ69EWCMT;
 				INFOPLIST_FILE = Project38/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
