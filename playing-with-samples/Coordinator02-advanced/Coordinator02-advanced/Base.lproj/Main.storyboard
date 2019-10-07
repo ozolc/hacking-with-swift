@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Coordinator01" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Coordinator02_advanced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Buy"/>
                                 <connections>
-                                    <action selector="buyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pov-AD-BzQ"/>
+                                    <action selector="buyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mw9-I0-Lqi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grH-GU-n4W">
@@ -28,7 +28,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
-                                    <action selector="createAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tfl-P3-CKh"/>
+                                    <action selector="createAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="92a-Mi-CLW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -43,7 +43,7 @@
         <!--Create Account View Controller-->
         <scene sceneID="dhe-7h-pOx">
             <objects>
-                <viewController storyboardIdentifier="CreateAccountViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Iu2-ND-Yuy" customClass="CreateAccountViewController" customModule="Coordinator01" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateAccountViewController" id="Iu2-ND-Yuy" customClass="CreateAccountViewController" customModule="Coordinator02_advanced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LMw-UR-S6J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
         <!--Buy View Controller-->
         <scene sceneID="09C-Y0-lvN">
             <objects>
-                <viewController storyboardIdentifier="BuyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LSo-qU-OXs" customClass="BuyViewController" customModule="Coordinator01" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuyViewController" id="LSo-qU-OXs" customClass="BuyViewController" customModule="Coordinator02_advanced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L4p-E5-xt7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

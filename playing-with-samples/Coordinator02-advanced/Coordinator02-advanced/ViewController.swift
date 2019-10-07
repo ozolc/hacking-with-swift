@@ -19,12 +19,12 @@ class ViewController: UIViewController, Storyboarded {
     
     @IBAction func buyTapped(_ sender: Any) {
         coordinator?.buySubscription()
+        print(coordinator)
     }
     
     @IBAction func createAccount(_ sender: Any) {
         coordinator?.createAccount()
     }
     
-
 }
 
