@@ -15,6 +15,7 @@
 		843EFA0F234B5B3B0033EEC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843EFA0D234B5B3B0033EEC8 /* LaunchScreen.storyboard */; };
 		843EFA18234B5CCB0033EEC8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EFA17234B5CCB0033EEC8 /* Coordinator.swift */; };
 		84BBA440234B5EB900411C93 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBA43F234B5EB900411C93 /* Storyboarded.swift */; };
+		84BBA442234B60E600411C93 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBA441234B60E600411C93 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		843EFA10234B5B3B0033EEC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843EFA17234B5CCB0033EEC8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		84BBA43F234B5EB900411C93 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		84BBA441234B60E600411C93 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				843EFA17234B5CCB0033EEC8 /* Coordinator.swift */,
 				84BBA43F234B5EB900411C93 /* Storyboarded.swift */,
+				84BBA441234B60E600411C93 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				843EFA18234B5CCB0033EEC8 /* Coordinator.swift in Sources */,
+				84BBA442234B60E600411C93 /* MainCoordinator.swift in Sources */,
 				843EFA07234B5B3A0033EEC8 /* ViewController.swift in Sources */,
 				84BBA440234B5EB900411C93 /* Storyboarded.swift in Sources */,
 				843EFA03234B5B3A0033EEC8 /* AppDelegate.swift in Sources */,
