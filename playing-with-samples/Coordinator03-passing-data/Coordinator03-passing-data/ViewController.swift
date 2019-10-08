@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, Storyboarded {
     
+    @IBOutlet weak var product: UISegmentedControl!
+    
     weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
@@ -18,7 +20,7 @@ class ViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func buyTapped(_ sender: Any) {
-        coordinator?.buySubscription()
+        coordinator?.buySubscription(to: product.selectedSegmentIndex)
     }
     
     @IBAction func createAccount(_ sender: Any) {
