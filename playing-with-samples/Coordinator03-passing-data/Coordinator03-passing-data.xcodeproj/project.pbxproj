@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8425F3E3234CC72C00BCF345 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8425F3E2234CC72C00BCF345 /* MainTabBarController.swift */; };
 		843EFA03234B5B3A0033EEC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EFA02234B5B3A0033EEC8 /* AppDelegate.swift */; };
 		843EFA07234B5B3A0033EEC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EFA06234B5B3A0033EEC8 /* ViewController.swift */; };
 		843EFA0A234B5B3A0033EEC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843EFA08234B5B3A0033EEC8 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8425F3E2234CC72C00BCF345 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		843EF9FF234B5B3A0033EEC8 /* Coordinator03-passing-data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coordinator03-passing-data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843EFA02234B5B3A0033EEC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		843EFA06234B5B3A0033EEC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				84BBA444234B63FE00411C93 /* BuyViewController.swift */,
 				84BBA446234B643200411C93 /* CreateAccountViewController.swift */,
+				8425F3E2234CC72C00BCF345 /* MainTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			files = (
 				843EFA18234B5CCB0033EEC8 /* Coordinator.swift in Sources */,
 				84BBA442234B60E600411C93 /* MainCoordinator.swift in Sources */,
+				8425F3E3234CC72C00BCF345 /* MainTabBarController.swift in Sources */,
 				843EFA07234B5B3A0033EEC8 /* ViewController.swift in Sources */,
 				84BBA440234B5EB900411C93 /* Storyboarded.swift in Sources */,
 				84BBA447234B643200411C93 /* CreateAccountViewController.swift in Sources */,
